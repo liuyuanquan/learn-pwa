@@ -1,5 +1,5 @@
 {
-  "name": "learning-pwa",
+  "name": "learn-pwa",
   "version": "0.1.0",
   "description": "some samples and blogs about how to start with your first PWA",
   "main": "app.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alienzhou/learning-pwa.git"
+    "url": "git+https://github.com/liuyuanquan/learn-pwa.git"
   },
   "keywords": [
     "PWA",
     "koa",
     "sample"
   ],
-  "author": "alienzhou",
+  "author": "liuyuanquan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alienzhou/learning-pwa/issues"
