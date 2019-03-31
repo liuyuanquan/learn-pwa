@@ -8,10 +8,10 @@ const port = process.env.PORT || 8085;
 const app = new Koa();
 const router = new Router();
 
-router.get('/book', async (ctx, next) => {
+router.get('/movie', async (ctx, next) => {
     let query = ctx.request.query;
-    let {q, fields} = query;
-    let url = `https://api.douban.com/v2/book/search?q=${q}&fields=${fields}&count=10`;
+    let {q} = query;
+    let url = `https://api.douban.com/v2/movie/search?q=${encodeURIComponent(q)}&start=0&count=25`;
     let res = await get(url);
     ctx.response.body = res;
 });

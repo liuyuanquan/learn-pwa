@@ -16,12 +16,12 @@
         desc.className = 'desc';
         // img.src = book.image;
         title.innerText = book.title;
-        author.innerText = book.author;
-        publisher.innerText = book.publisher;
-        price.innerText = book.price;
+        author.innerText = book.directors[0].name;
+        publisher.innerText = book.genres[0];
+        price.innerText = book.year;
 
-        book.publisher && desc.appendChild(publisher);
-        book.price && desc.appendChild(price);
+        book.genres && desc.appendChild(publisher);
+        book.year && desc.appendChild(price);
         // li.appendChild(img);
         li.appendChild(title);
         li.appendChild(author);
@@ -77,7 +77,7 @@
         var input = document.querySelector('#js-search-input');
         var query = input.value;
         var xhr = new XMLHttpRequest();
-        var url = '/book?q=' + query + '&fields=id,title,image,author,publisher,price';
+        var url = '/movie?q=' + encodeURIComponent(query);
         if (query === '') {
             tip('请输入关键词');
             return;
@@ -97,12 +97,12 @@
                     response = xhr.responseText;
                 }
                 tip();
-                if (response.books.length === 0) {
+                if (response.subjects.length === 0) {
                     tip('无结果');
                 }
                 else {
                     input.blur();
-                    fillList(response.books);
+                    fillList(response.subjects);
                     document.querySelector('#js-thanks').style = 'display: block';
                 }
             }
